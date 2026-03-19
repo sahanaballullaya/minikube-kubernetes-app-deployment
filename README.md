@@ -1,11 +1,5 @@
 # minikube-kubernetes-app-deployment
 
-![Docker](https://img.shields.io/badge/Docker-29.2.1-blue?logo=docker)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-1.34-326CE5?logo=kubernetes&logoColor=white)
-![Minikube](https://img.shields.io/badge/Minikube-1.38-orange?logo=kubernetes)
-![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D6?logo=windows)
-![Nginx](https://img.shields.io/badge/Nginx-alpine-009639?logo=nginx&logoColor=white)
-
 A personal portfolio page for **Sahana** (Aspiring SRE), containerized with Docker
 and deployed on a local Kubernetes cluster using Minikube — built from scratch on Windows 11.
 
@@ -168,49 +162,6 @@ minikube dashboard
 
 ---
 
-## Phase 4 — Push to GitHub
-
-### Git installed
-
-![Git Version](screenshots/17-git-version.jpg)
-
-### Repository created
-
-![GitHub Repo](screenshots/18-github-repo-created.jpg)
-
-### Code pushed
-
-```powershell
-git init
-git add .
-git commit -m "Initial commit: Sahana portfolio deployed on Kubernetes"
-git branch -M main
-git remote add origin https://github.com/sahanaballullaya/minikube-kubernetes-app-deployment.git
-git push -u origin main
-```
-
-![Git Push](screenshots/19-git-push.jpg)
-
-### README live on GitHub
-
-![GitHub README](screenshots/20-github-readme.jpg)
-
----
-
-## Project Structure
-
-```
-minikube-kubernetes-app-deployment/
-├── index.html              # Portfolio page — Sahana, Aspiring SRE
-├── Dockerfile              # nginx:alpine base + HTML page
-├── deployment.yaml         # Kubernetes Deployment — 2 replicas
-├── service.yaml            # Kubernetes NodePort Service — port 30080
-├── README.md
-└── screenshots/            # Step-by-step proof of work (20 screenshots)
-```
-
----
-
 ## Run It Yourself
 
 ### Prerequisites
@@ -235,7 +186,7 @@ docker run -d -p 8080:80 --name my-portfolio k8s-portfolio
 ### Option B — Full Kubernetes deployment
 
 ```powershell
-git clone https://github.com/sahanaballullaya/minikube-kubernetes-app-deployment.git
+
 cd minikube-kubernetes-app-deployment
 
 # Start cluster
@@ -280,21 +231,3 @@ minikube stop
 kubectl delete -f deployment.yaml
 kubectl delete -f service.yaml
 ```
-
----
-
-## What I Learned
-
-- How Docker containers work and how to write a Dockerfile
-- Building and tagging a custom Docker image
-- Kubernetes core concepts: Pods, Deployments, Services, ReplicaSets
-- The difference between a Docker image and a running container
-- Why `imagePullPolicy: Never` matters for local images
-- Running a local Kubernetes cluster with Minikube on Windows 11
-- Using `kubectl` to deploy, inspect, and manage workloads
-- Exposing apps outside a cluster using NodePort services
-- End-to-end workflow: code → container → Kubernetes → browser
-
----
-
-*Sahana · Aspiring SRE · Deployed with Docker & Kubernetes*
